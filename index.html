@@ -1,60 +1,372 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <title>&#128105; My blog &#129302;</title>
+    <title>My blog</title>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="../styles/main.css" rel="stylesheet" type="text/css" />
-    <link
-      href="https://pikopiko-2025.blogspot.com/favicon.ico"
-      rel="icon"
-      type="image/x-icon"
-    />
-    <style>
-      body {
-        margin: 0;
-      }
-
-      ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        width: 25%;
-        background-color: #f1f1f1;
-        position: fixed;
-        height: 100%;
-        overflow: auto;
-      }
-
-      li a {
-        display: block;
-        color: #000;
-        padding: 8px 16px;
-        text-decoration: none;
-      }
-
-      li a.active {
-        background-color: #04aa6d;
-        color: white;
-      }
-
-      li a:hover:not(.active) {
-        background-color: #555;
-        color: white;
-      }
-    </style>
+    <link href="\images\PFT Favicon.svg" rel="icon" type="image/x-icon" />
   </head>
 
-  <body>
-    <ul>
-      <li><a class="active" href="#home">Home</a></li>
-      <li><a href="#news">News</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="#about">About</a></li>
-    </ul>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-    <div style="margin-left: 25%; padding: 1px 16px; height: 1000px">
-      <h1>Kia ora Taiao! (Hello World!)</h1>
-      <p>This is the beginning of my website home page.</p>
-      <p>It will eventually contain a list of links to all my blogs.</p>
+    body,
+    html {
+      height: 100%;
+      font-family: sans-serif;
+    }
+
+    .min-h-screen {
+      min-height: 100vh;
+    }
+
+    .grid-two-col {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 1024px) {
+      .grid-two-col {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .hero {
+      background: linear-gradient(to bottom right, #fcd34d, #fb923c);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    @media (min-width: 1024px) {
+      .hero {
+        padding: 3rem;
+      }
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      color: white;
+      font-weight: bold;
+      font-family: serif;
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+
+    @media (min-width: 1024px) {
+      .hero h1 {
+        font-size: 4rem;
+      }
+    }
+
+    .hero p {
+      color: white;
+      font-size: 1.125rem;
+      letter-spacing: 0.1em;
+      font-weight: 300;
+    }
+
+    .image-container img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .right-panel {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      background: linear-gradient(to right, #3b82f6, #9333ea);
+      padding: 1.5rem;
+    }
+
+    @media (min-width: 1024px) {
+      .header {
+        padding: 2rem;
+      }
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header h2 {
+      font-size: 2rem;
+      font-weight: bold;
+      color: black;
+      font-family: serif;
+      font-style: italic;
+    }
+
+    @media (min-width: 1024px) {
+      .header h2 {
+        font-size: 2.5rem;
+      }
+    }
+
+    nav a {
+      margin-left: 1rem;
+      color: black;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      color: #4b5563;
+    }
+
+    .section {
+      background-color: #2dd4bf;
+      padding: 1.5rem;
+    }
+
+    @media (min-width: 1024px) {
+      .section {
+        padding: 2rem;
+      }
+    }
+
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-title h3 {
+      font-size: 1.875rem;
+      font-weight: bold;
+      color: black;
+    }
+
+    @media (min-width: 1024px) {
+      .section-title h3 {
+        font-size: 2.25rem;
+      }
+    }
+
+    .section-title p {
+      font-size: 1.125rem;
+      color: black;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .card-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .card {
+      background-color: #a855f7;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .card.yellow {
+      background-color: #facc15;
+    }
+
+    .card-header {
+      background-color: #e5e7eb;
+      border-top-left-radius: 0.5rem;
+      border-top-right-radius: 0.5rem;
+      padding: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .window-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .dots {
+      display: flex;
+      gap: 0.25rem;
+    }
+
+    .dot {
+      width: 0.75rem;
+      height: 0.75rem;
+      border-radius: 9999px;
+    }
+
+    .dot.red {
+      background-color: #ef4444;
+    }
+    .dot.yellow {
+      background-color: #facc15;
+    }
+    .dot.green {
+      background-color: #22c55e;
+    }
+
+    .card-title {
+      text-align: center;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      color: black;
+    }
+
+    .preview-box {
+      height: 6rem;
+      border-radius: 0.5rem;
+      background: linear-gradient(to bottom, #bfdbfe, #86efac, #16a34a);
+    }
+  </style>
+
+  <body class="min-h-screen">
+    <div class="grid-two-col min-h-screen">
+      <!-- Left Side - Hero -->
+      <div class="hero">
+        <div class="text-center">
+          <h1>Madison Lee</h1>
+          <p>SHE-EO • ENTREPRENEUR</p>
+        </div>
+        <div class="image-container">
+          <img
+            src="/images/Tania-56.jpeg?height=400&width=300"
+            alt="Madison Lee - Entrepreneur sitting on a stool in a pink suit"
+          />
+        </div>
+      </div>
+
+      <!-- Right Side -->
+      <div class="right-panel">
+        <div class="header">
+          <div class="header-content">
+            <h2>Heading</h2>
+            <nav>
+              <a href="#contact">Contact Us</a>
+              <a href="#about">About Me</a>
+            </nav>
+          </div>
+        </div>
+
+        <div class="flex-1">
+          <!-- Section 1 -->
+          <div class="section">
+            <div class="section-title">
+              <h3>Subheading</h3>
+              <p>Add a little bit of body text</p>
+            </div>
+            <div class="card-grid">
+              <div class="card">
+                <div class="card-header">
+                  <div class="window-controls">
+                    <div class="dots">
+                      <div class="dot red"></div>
+                      <div class="dot yellow"></div>
+                      <div class="dot green"></div>
+                    </div>
+                    <div class="text-xs text-gray-600">×</div>
+                  </div>
+                  <div class="card-title">Blog post</div>
+                  <div class="preview-box"></div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header">
+                  <div class="window-controls">
+                    <div class="dots">
+                      <div class="dot red"></div>
+                      <div class="dot yellow"></div>
+                      <div class="dot green"></div>
+                    </div>
+                    <div class="text-xs text-gray-600">×</div>
+                  </div>
+                  <div class="card-title">Blog post</div>
+                  <div class="preview-box"></div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header">
+                  <div class="window-controls">
+                    <div class="dots">
+                      <div class="dot red"></div>
+                      <div class="dot yellow"></div>
+                      <div class="dot green"></div>
+                    </div>
+                    <div class="text-xs text-gray-600">×</div>
+                  </div>
+                  <div class="card-title">Blog post</div>
+                  <div class="preview-box"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 2 -->
+          <div class="section">
+            <div class="section-title">
+              <h3>Subheading</h3>
+              <p>Add a little bit of body text</p>
+            </div>
+            <div class="card-grid">
+              <div class="card yellow">
+                <div class="card-header">
+                  <div class="window-controls">
+                    <div class="dots">
+                      <div class="dot red"></div>
+                      <div class="dot yellow"></div>
+                      <div class="dot green"></div>
+                    </div>
+                    <div class="text-xs text-gray-600">×</div>
+                  </div>
+                  <div class="card-title">Blog post</div>
+                  <div class="preview-box"></div>
+                </div>
+              </div>
+              <div class="card yellow">
+                <div class="card-header">
+                  <div class="window-controls">
+                    <div class="dots">
+                      <div class="dot red"></div>
+                      <div class="dot yellow"></div>
+                      <div class="dot green"></div>
+                    </div>
+                    <div class="text-xs text-gray-600">×</div>
+                  </div>
+                  <div class="card-title">Blog post</div>
+                  <div class="preview-box"></div>
+                </div>
+              </div>
+              <div class="card yellow">
+                <div class="card-header">
+                  <div class="window-controls">
+                    <div class="dots">
+                      <div class="dot red"></div>
+                      <div class="dot yellow"></div>
+                      <div class="dot green"></div>
+                    </div>
+                    <div class="text-xs text-gray-600">×</div>
+                  </div>
+                  <div class="card-title">Blog post</div>
+                  <div class="preview-box"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
