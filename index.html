@@ -6,365 +6,315 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="../styles/main.css" rel="stylesheet" type="text/css" />
     <link href="\images\PFT Favicon.svg" rel="icon" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        background-color: #a855f7; /* or match your section body */
+      }
+
+      .grid-two-col {
+        display: grid;
+        grid-template-columns: 1fr;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      @media (min-width: 1024px) {
+        .grid-two-col {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      .hero {
+        background: linear-gradient(to bottom right, #fcd34d, #fb923c);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+      }
+
+      @media (min-width: 1024px) {
+        .hero {
+          padding: 3rem;
+        }
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+        color: white;
+        font-weight: bold;
+        font-family: 'Dancing Script', cursive;
+        margin-bottom: 1rem;
+      }
+
+      @media (min-width: 1024px) {
+        .hero h1 {
+          font-size: 4rem;
+        }
+      }
+
+      .hero p {
+        color: white;
+        font-size: 1.125rem;
+        letter-spacing: 0.1em;
+        font-weight: 300;
+        margin-bottom: 1rem;
+      }
+
+      .image-container img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .right-panel {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        height: 100%;
+        overflow-y: auto;
+      }
+
+      .flex-1 {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+      }
+      .header {
+        background: linear-gradient(to right, #3b82f6, #9333ea);
+        padding: 1.5rem;
+      }
+
+      @media (min-width: 1024px) {
+        .header {
+          padding: 2rem;
+        }
+      }
+
+      .header-content {
+        display: flex;
+        flex-direction: column; /* stack h1 + p vertically */
+        justify-content: space-between;
+        align-items: left;
+      }
+
+      .header-content h1 {
+        font-size: 3rem;
+        color: white;
+        font-weight: bold;
+        font-family: 'Dancing Script', cursive;
+        margin-bottom: 1rem;
+      }
+
+      .header-content p {
+        font-size: 1.125rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .section-wrapper {
+        margin-bottom: 2rem;
+      }
+
+      /* Retain your title style */
+      .section-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #d42d2d; /* Moved here */
+        padding: 1.5rem;
+      }
+
+      .section-title h2 {
+        font-size: 1.875rem;
+        font-weight: bold;
+        color: white; /* changed to white to contrast red background */
+      }
+
+      @media (min-width: 1024px) {
+        .section-title h2 {
+          font-size: 2.25rem;
+        }
+      }
+
+      .section-title p {
+        font-size: 1.125rem;
+        color: white;
+      }
+
+      /* Body with a separate background */
+      .section-body {
+        padding: 1.5rem;
+      }
+
+      @media (min-width: 1024px) {
+        .section-body {
+          padding: 2rem;
+        }
+      }
+
+      /* Example alternate background */
+      .section-body-purple {
+        background-color: #a855f7;
+      }
+
+      .section-body-yellow {
+        background-color: #facc15;
+      }
+
+      .section-wrapper {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .section-body {
+        flex: 1;
+        overflow: auto;
+      }
+      .card-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      @media (min-width: 768px) {
+        .card-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      .post {
+        display: block;
+        background-color: white;
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+        text-decoration: none;
+        color: inherit;
+        border-radius: 8px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .post:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      .post-title {
+        font-size: 1.25rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+      }
+
+      .post-body {
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+    </style>
   </head>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body,
-    html {
-      height: 100%;
-      font-family: sans-serif;
-    }
-
-    .min-h-screen {
-      min-height: 100vh;
-    }
-
-    .grid-two-col {
-      display: grid;
-      grid-template-columns: 1fr;
-    }
-
-    @media (min-width: 1024px) {
-      .grid-two-col {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    .hero {
-      background: linear-gradient(to bottom right, #fcd34d, #fb923c);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 2rem;
-    }
-
-    @media (min-width: 1024px) {
-      .hero {
-        padding: 3rem;
-      }
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      color: white;
-      font-weight: bold;
-      font-family: serif;
-      font-style: italic;
-      margin-bottom: 1rem;
-    }
-
-    @media (min-width: 1024px) {
-      .hero h1 {
-        font-size: 4rem;
-      }
-    }
-
-    .hero p {
-      color: white;
-      font-size: 1.125rem;
-      letter-spacing: 0.1em;
-      font-weight: 300;
-    }
-
-    .image-container img {
-      max-width: 100%;
-      height: auto;
-    }
-
-    .right-panel {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .header {
-      background: linear-gradient(to right, #3b82f6, #9333ea);
-      padding: 1.5rem;
-    }
-
-    @media (min-width: 1024px) {
-      .header {
-        padding: 2rem;
-      }
-    }
-
-    .header-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .header h2 {
-      font-size: 2rem;
-      font-weight: bold;
-      color: black;
-      font-family: serif;
-      font-style: italic;
-    }
-
-    @media (min-width: 1024px) {
-      .header h2 {
-        font-size: 2.5rem;
-      }
-    }
-
-    nav a {
-      margin-left: 1rem;
-      color: black;
-      font-weight: 500;
-      text-decoration: none;
-    }
-
-    nav a:hover {
-      color: #4b5563;
-    }
-
-    .section {
-      background-color: #2dd4bf;
-      padding: 1.5rem;
-    }
-
-    @media (min-width: 1024px) {
-      .section {
-        padding: 2rem;
-      }
-    }
-
-    .section-title {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1.5rem;
-    }
-
-    .section-title h3 {
-      font-size: 1.875rem;
-      font-weight: bold;
-      color: black;
-    }
-
-    @media (min-width: 1024px) {
-      .section-title h3 {
-        font-size: 2.25rem;
-      }
-    }
-
-    .section-title p {
-      font-size: 1.125rem;
-      color: black;
-    }
-
-    .card-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1rem;
-    }
-
-    @media (min-width: 768px) {
-      .card-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    .card {
-      background-color: #a855f7;
-      padding: 1rem;
-      border-radius: 0.5rem;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    .card.yellow {
-      background-color: #facc15;
-    }
-
-    .card-header {
-      background-color: #e5e7eb;
-      border-top-left-radius: 0.5rem;
-      border-top-right-radius: 0.5rem;
-      padding: 0.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .window-controls {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 0.5rem;
-    }
-
-    .dots {
-      display: flex;
-      gap: 0.25rem;
-    }
-
-    .dot {
-      width: 0.75rem;
-      height: 0.75rem;
-      border-radius: 9999px;
-    }
-
-    .dot.red {
-      background-color: #ef4444;
-    }
-    .dot.yellow {
-      background-color: #facc15;
-    }
-    .dot.green {
-      background-color: #22c55e;
-    }
-
-    .card-title {
-      text-align: center;
-      font-weight: 500;
-      margin-bottom: 1rem;
-      color: black;
-    }
-
-    .preview-box {
-      height: 6rem;
-      border-radius: 0.5rem;
-      background: linear-gradient(to bottom, #bfdbfe, #86efac, #16a34a);
-    }
-  </style>
-
-  <body class="min-h-screen">
-    <div class="grid-two-col min-h-screen">
+  <body>
+    <div class="grid-two-col">
       <!-- Left Side - Hero -->
       <div class="hero">
         <div class="text-center">
-          <h1>Madison Lee</h1>
+          <h1>Tania Hannaford</h1>
           <p>SHE-EO • ENTREPRENEUR</p>
         </div>
         <div class="image-container">
           <img
             src="/images/Tania-56.jpeg?height=400&width=300"
-            alt="Madison Lee - Entrepreneur sitting on a stool in a pink suit"
+            alt="Tania Hannaford working on a laptop outside"
           />
         </div>
       </div>
 
       <!-- Right Side -->
       <div class="right-panel">
-        <div class="header">
+        <header class="header">
           <div class="header-content">
-            <h2>Heading</h2>
-            <nav>
-              <a href="#contact">Contact Us</a>
-              <a href="#about">About Me</a>
-            </nav>
+            <h1>Kia ora Taiao! (Hello World!)</h1>
+            <p>This is the beginning of my website home page.</p>
+            <p>It will eventually contain a list of links to all my blogs.</p>
           </div>
-        </div>
+        </header>
 
         <div class="flex-1">
           <!-- Section 1 -->
-          <div class="section">
+          <section class="section-wrapper">
             <div class="section-title">
-              <h3>Subheading</h3>
+              <h2>Human Skills</h2>
               <p>Add a little bit of body text</p>
             </div>
-            <div class="card-grid">
-              <div class="card">
-                <div class="card-header">
-                  <div class="window-controls">
-                    <div class="dots">
-                      <div class="dot red"></div>
-                      <div class="dot yellow"></div>
-                      <div class="dot green"></div>
-                    </div>
-                    <div class="text-xs text-gray-600">×</div>
-                  </div>
-                  <div class="card-title">Blog post</div>
-                  <div class="preview-box"></div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header">
-                  <div class="window-controls">
-                    <div class="dots">
-                      <div class="dot red"></div>
-                      <div class="dot yellow"></div>
-                      <div class="dot green"></div>
-                    </div>
-                    <div class="text-xs text-gray-600">×</div>
-                  </div>
-                  <div class="card-title">Blog post</div>
-                  <div class="preview-box"></div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header">
-                  <div class="window-controls">
-                    <div class="dots">
-                      <div class="dot red"></div>
-                      <div class="dot yellow"></div>
-                      <div class="dot green"></div>
-                    </div>
-                    <div class="text-xs text-gray-600">×</div>
-                  </div>
-                  <div class="card-title">Blog post</div>
-                  <div class="preview-box"></div>
-                </div>
+            <div class="section-body section-body-purple">
+              <div class="card-grid">
+                <a class="post" href="#">
+                  <h3 class="post-title">How I Built My First App</h3>
+                  <p class="post-body">
+                    A short story about the journey into app development...
+                  </p>
+                </a>
+                <a class="post" href="#">
+                  <h3 class="post-title">Working with Teams</h3>
+                  <p class="post-body">
+                    Skills I learned through collaborative projects and
+                    mentoring...
+                  </p>
+                </a>
+                <a class="post" href="#">
+                  <h3 class="post-title">Learning CSS Grid</h3>
+                  <p class="post-body">
+                    Here's how I wrapped my head around layout techniques...
+                  </p>
+                </a>
               </div>
             </div>
-          </div>
+          </section>
 
           <!-- Section 2 -->
-          <div class="section">
+          <section class="section-wrapper">
             <div class="section-title">
-              <h3>Subheading</h3>
+              <h2>Technical Skills</h2>
               <p>Add a little bit of body text</p>
             </div>
-            <div class="card-grid">
-              <div class="card yellow">
-                <div class="card-header">
-                  <div class="window-controls">
-                    <div class="dots">
-                      <div class="dot red"></div>
-                      <div class="dot yellow"></div>
-                      <div class="dot green"></div>
-                    </div>
-                    <div class="text-xs text-gray-600">×</div>
-                  </div>
-                  <div class="card-title">Blog post</div>
-                  <div class="preview-box"></div>
-                </div>
-              </div>
-              <div class="card yellow">
-                <div class="card-header">
-                  <div class="window-controls">
-                    <div class="dots">
-                      <div class="dot red"></div>
-                      <div class="dot yellow"></div>
-                      <div class="dot green"></div>
-                    </div>
-                    <div class="text-xs text-gray-600">×</div>
-                  </div>
-                  <div class="card-title">Blog post</div>
-                  <div class="preview-box"></div>
-                </div>
-              </div>
-              <div class="card yellow">
-                <div class="card-header">
-                  <div class="window-controls">
-                    <div class="dots">
-                      <div class="dot red"></div>
-                      <div class="dot yellow"></div>
-                      <div class="dot green"></div>
-                    </div>
-                    <div class="text-xs text-gray-600">×</div>
-                  </div>
-                  <div class="card-title">Blog post</div>
-                  <div class="preview-box"></div>
-                </div>
+            <div class="section-body section-body-purple">
+              <div class="card-grid">
+                <a class="post" href="#">
+                  <h3 class="post-title">How I Built My First App</h3>
+                  <p class="post-body">
+                    A short story about the journey into app development...
+                  </p>
+                </a>
+                <a class="post" href="#">
+                  <h3 class="post-title">Working with Teams</h3>
+                  <p class="post-body">
+                    Skills I learned through collaborative projects and
+                    mentoring...
+                  </p>
+                </a>
+                <a class="post" href="#">
+                  <h3 class="post-title">Learning CSS Grid</h3>
+                  <p class="post-body">
+                    Here's how I wrapped my head around layout techniques...
+                  </p>
+                </a>
               </div>
             </div>
-          </div>
+          </section>
         </div>
       </div>
     </div>
