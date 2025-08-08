@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>My blog</title>
     <meta charset="UTF-8" />
+    <title>My blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="styles/main.css" rel="stylesheet" type="text/css" />
     <link href="images/PFT Favicon.svg" rel="icon" type="image/x-icon" />
@@ -10,11 +10,37 @@
       href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap"
       rel="stylesheet"
     />
+    <style>
+      /* Per-page overrides only */
+
+      .section-title {
+        padding: 1rem;
+        background: #a855f7;
+        color: white;
+      }
+
+      .post {
+        flex: 0 0 250px;
+        height: 350px;
+        padding: 1rem;
+      }
+
+      .post-title {
+        font-size: 1.1rem;
+        font-weight: bold;
+        margin: 0 0 0.5rem 0;
+      }
+
+      .post-body {
+        font-size: 0.9rem;
+        line-height: 1.3;
+      }
+    </style>
   </head>
 
   <body>
     <div class="grid-two-col">
-      <!-- Left Side - Hero -->
+      <!-- Left Panel -->
       <div class="hero">
         <div class="text-center">
           <h1>Tania Hannaford</h1>
@@ -22,14 +48,15 @@
         </div>
         <div class="image-container">
           <img
-            src="/images/Tania-56.jpeg?height=400&width=300"
-            alt="Tania Hannaford working on a laptop outside"
+            src="/images/Skate-Pic.jpg?height=400&width=300"
+            alt="Tania Hannaford reading a book about skating"
           />
         </div>
       </div>
 
-      <!-- Right Side -->
+      <!-- Right Panel -->
       <div class="right-panel">
+        <!-- Header -->
         <header class="header">
           <div class="header-content">
             <h1>Kia ora Taiao! (Hello World!)</h1>
@@ -38,74 +65,110 @@
           </div>
         </header>
 
-        <div class="flex-1">
-          <!-- Section 1 -->
-          <section class="section-wrapper">
-            <div class="section-title">
-              <h2>Human Skills</h2>
-              <p>Add a little bit of body text</p>
+        <!-- Section 1: Human Skills -->
+        <section class="section-wrapper">
+          <div class="section-title">
+            <h2>Human Skills</h2>
+            <p>
+              Human skills are about strengthening the people behind the
+              code—communication, collaboration, and empathy
+            </p>
+          </div>
+          <div class="section-body section-body-pink">
+            <button
+              class="scroll-button left"
+              onclick="scrollSection('human', -300)"
+            >
+              ←
+            </button>
+            <div class="card-grid" id="human">
+              <a class="post" href="/blog/te-houtaewa-template.html">
+                <h3 class="post-title">The Story of Te Houtaewa</h3>
+                <p>E kore e mau i a koe, he wae kai pakiaka.</p>
+                <br />
+                <p>
+                  A foot accustomed to running over roots makes the speediest
+                  runner.
+                </p>
+              </a>
+              <a class="post" href="#">
+                <h3 class="post-title">Working with Teams</h3>
+                <p class="post-body">
+                  Skills I learned through collaborative projects and
+                  mentoring...
+                </p>
+              </a>
+              <a class="post" href="#">
+                <h3 class="post-title">Learning CSS Grid</h3>
+                <p class="post-body">
+                  Here's how I wrapped my head around layout techniques...
+                </p>
+              </a>
+              <!-- Add more if needed -->
             </div>
-            <div class="section-body section-body-purple">
-              <div class="card-grid">
-                <a class="post" href="/blog/te-houtaewa-template.html">
-                  <h3 class="post-title">The Story of Te Houtaewa</h3>
-                  <p class="post-body"></p>
-                  <p>E kore e mau i a koe, he wae kai pakiaka.</p>
-                  <br />
-                  <p>
-                    A foot accustomed to running over roots makes the speediest
-                    runner.
-                  </p>
-                </a>
-                <a class="post" href="#">
-                  <h3 class="post-title">Working with Teams</h3>
-                  <p class="post-body">
-                    Skills I learned through collaborative projects and
-                    mentoring...
-                  </p>
-                </a>
-                <a class="post" href="#">
-                  <h3 class="post-title">Learning CSS Grid</h3>
-                  <p class="post-body">
-                    Here's how I wrapped my head around layout techniques...
-                  </p>
-                </a>
-              </div>
-            </div>
-          </section>
+            <button
+              class="scroll-button right"
+              onclick="scrollSection('human', 300)"
+            >
+              →
+            </button>
+          </div>
+        </section>
 
-          <!-- Section 2 -->
-          <section class="section-wrapper">
-            <div class="section-title">
-              <h2>Technical Skills</h2>
-              <p>Add a little bit of body text</p>
+        <!-- Section 2: Technical Skills -->
+        <section class="section-wrapper">
+          <div class="section-title">
+            <h2>Technical Skills</h2>
+            <p>
+              Technical skills are about mastering the tools and technologies
+              that bring ideas to life on the web
+            </p>
+          </div>
+          <div class="section-body section-body-yellow">
+            <button
+              class="scroll-button left"
+              onclick="scrollSection('technical', -300)"
+            >
+              ←
+            </button>
+            <div class="card-grid" id="technical">
+              <a class="post" href="/blog/classes-vs-id.html">
+                <h3 class="post-title">Classes vs. IDs</h3>
+                <p class="post-body">
+                  Best practices associated with using classes vs. IDs
+                </p>
+              </a>
+              <a class="post" href="#">
+                <h3 class="post-title">Responsive Layouts</h3>
+                <p class="post-body">
+                  How I approach building for all screen sizes.
+                </p>
+              </a>
+              <a class="post" href="#">
+                <h3 class="post-title">Using JavaScript Modules</h3>
+                <p class="post-body">
+                  Structuring clean, modular scripts for web apps.
+                </p>
+              </a>
+              <!-- Add more if needed -->
             </div>
-            <div class="section-body section-body-purple">
-              <div class="card-grid">
-                <a class="post" href="/blog/classes-vs-id.html">
-                  <h3 class="post-title">Classes vd Id.s</h3>
-                  <p class="post-body">
-                    Best practices associated with using classes vs. ids
-                  </p>
-                </a>
-                <a class="post" href="#">
-                  <h3 class="post-title">Working with Teams</h3>
-                  <p class="post-body">
-                    Skills I learned through collaborative projects and
-                    mentoring...
-                  </p>
-                </a>
-                <a class="post" href="#">
-                  <h3 class="post-title">Learning CSS Grid</h3>
-                  <p class="post-body">
-                    Here's how I wrapped my head around layout techniques...
-                  </p>
-                </a>
-              </div>
-            </div>
-          </section>
-        </div>
+            <button
+              class="scroll-button right"
+              onclick="scrollSection('technical', 300)"
+            >
+              →
+            </button>
+          </div>
+        </section>
       </div>
     </div>
+
+    <!-- Scroll helper script -->
+    <script>
+      function scrollSection(id, offset) {
+        const el = document.getElementById(id)
+        el.scrollLeft += offset
+      }
+    </script>
   </body>
 </html>

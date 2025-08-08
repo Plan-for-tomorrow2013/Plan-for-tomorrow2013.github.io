@@ -1,3 +1,4 @@
+/* Global reset and base styles */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,22 +9,9 @@ html,
 body {
   height: 100%;
   margin: 0;
-  padding: 0;
   font-family: sans-serif;
-  background-color: #a855f7; /* or match your section body */
-}
-
-.grid-two-col {
-  display: grid;
-  grid-template-columns: 1fr;
-  height: 100vh;
-  overflow: hidden;
-}
-
-@media (min-width: 1024px) {
-  .grid-two-col {
-    grid-template-columns: 1fr 1fr;
-  }
+  background-color: #fef3c7;
+  overflow: hidden; /* Hide overall scrollbars */
 }
 
 @font-face {
@@ -32,6 +20,15 @@ body {
   font-weight: normal;
   font-style: normal;
 }
+
+/* Grid layout */
+.grid-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh; /* Full viewport height */
+}
+
+/* Left side hero */
 .hero {
   background: linear-gradient(to bottom right, #fcd34d, #fb923c);
   display: flex;
@@ -41,24 +38,12 @@ body {
   padding: 2rem;
 }
 
-@media (min-width: 1024px) {
-  .hero {
-    padding: 3rem;
-  }
-}
-
 .hero h1 {
   font-size: 3rem;
   color: white;
   font-weight: bold;
   font-family: 'Twister', 'Dancing Script', cursive;
   margin-bottom: 1rem;
-}
-
-@media (min-width: 1024px) {
-  .hero h1 {
-    font-size: 4rem;
-  }
 }
 
 .hero p {
@@ -74,35 +59,25 @@ body {
   height: auto;
 }
 
+/* Right side panel */
 .right-panel {
   display: flex;
   flex-direction: column;
-  flex: 1;
-  height: 100%;
-  overflow-y: auto;
+  height: 100vh;
+  overflow: hidden;
+  justify-content: space-between;
 }
 
-.flex-1 {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
+/* Header */
 .header {
-  background: linear-gradient(to right, #3b82f6, #9333ea);
-  padding: 1.5rem;
-}
-
-@media (min-width: 1024px) {
-  .header {
-    padding: 2rem;
-  }
+  background-color: cyan;
+  padding: 2rem;
 }
 
 .header-content {
   display: flex;
-  flex-direction: column; /* stack h1 + p vertically */
+  flex-direction: column;
   justify-content: space-between;
-  align-items: left;
 }
 
 .header-content h1 {
@@ -118,29 +93,29 @@ body {
   margin-bottom: 0.5rem;
 }
 
+/* Sections */
 .section-wrapper {
-  margin-bottom: 2rem;
+  flex-shrink: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+  position: relative;
 }
 
-/* Retain your title style */
+/* Section headers */
 .section-title {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #d42d2d; /* Moved here */
+  background-color: #a548ff;
   padding: 1.5rem;
 }
 
 .section-title h2 {
   font-size: 1.875rem;
   font-weight: bold;
-  color: white; /* changed to white to contrast red background */
-}
-
-@media (min-width: 1024px) {
-  .section-title h2 {
-    font-size: 2.25rem;
-  }
+  color: white;
 }
 
 .section-title p {
@@ -148,75 +123,57 @@ body {
   color: white;
 }
 
-/* Body with a separate background */
+/* Section content background */
 .section-body {
-  padding: 1.5rem;
+  flex: 1;
+  padding: 1rem;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
-@media (min-width: 1024px) {
-  .section-body {
-    padding: 2rem;
-  }
-}
-
-/* Example alternate background */
-.section-body-purple {
-  background-color: #a855f7;
+.section-body-pink {
+  background-color: #ff738e;
 }
 
 .section-body-yellow {
   background-color: #facc15;
 }
 
-.section-wrapper {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.section-body {
-  flex: 1;
-  overflow: auto;
-}
+/* Scrollable grid */
 .card-grid {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
   gap: 1rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 1rem;
 }
 
-.back-button-wrapper {
-  grid-column: span 12;
-  margin-bottom: 1rem;
+.card-grid::-webkit-scrollbar {
+  display: none;
 }
 
-.back-button {
-  display: inline-block;
-  font-size: 0.95rem;
-  color: #166534;
-  text-decoration: none;
-  font-weight: 500;
+.card-grid {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-.back-button:hover {
-  text-decoration: underline;
-}
-
-@media (min-width: 768px) {
-  .card-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
+/* Individual post card */
 .post {
-  display: block;
+  min-width: 300px;
   background-color: white;
   padding: 1.5rem;
-  margin-bottom: 1rem;
   text-decoration: none;
   color: inherit;
   border-radius: 8px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
 }
 
 .post:hover {
@@ -233,4 +190,34 @@ body {
 .post-body {
   font-size: 1rem;
   line-height: 1.6;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* For Chromium and Safari */
+  -webkit-box-orient: vertical;
+  line-clamp: 4; /* Non-standard but future-facing */
+  box-orient: vertical; /* For old Firefox or fallback */
+}
+
+/* Scroll buttons */
+.scroll-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: white;
+  border: none;
+  border-radius: 9999px;
+  width: 32px;
+  height: 32px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 10;
+}
+
+.scroll-button.left {
+  left: 0.5rem;
+}
+
+.scroll-button.right {
+  right: 0.5rem;
 }
