@@ -1,43 +1,186 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Stories and Legends (PAGE title)</title>
+    <title>Stories and Legends</title>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="../styles/main.css" rel="stylesheet" type="text/css" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          sans-serif;
+        background-color: #ffffff !important;
+        color: #1f2937;
+        line-height: 1.6;
+      }
+      p {
+        margin-bottom: 1rem;
+      }
+      .container {
+        max-width: 64rem;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+
+      .hero-image {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 2px;
+        margin-bottom: 2rem;
+      }
+
+      .content-grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 2rem;
+      }
+
+      .main-heading {
+        grid-column: span 7;
+      }
+
+      .heading-title {
+        font-size: 1.875rem;
+        font-weight: 700;
+        color: #166534;
+        margin-bottom: 1rem;
+      }
+
+      .heading-subtitle {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: white;
+        line-height: 1.4;
+        margin-bottom: 0.5rem;
+      }
+
+      .heading-subtitle em {
+        font-style: italic;
+      }
+
+      .heading-date {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #166534;
+      }
+
+      .quote-sidebar {
+        grid-column: span 5;
+        background-color: #166534;
+        color: white;
+        padding: 1.5rem;
+        height: fit-content;
+        border-radius: 4px;
+        font-style: italic;
+        font-size: 1rem;
+      }
+
+      .body-text {
+        grid-column: span 12;
+        font-size: 0.95rem;
+        color: #1f2937;
+        text-align: justify;
+        margin-top: 2rem;
+      }
+
+      @media (max-width: 768px) {
+        .content-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .main-heading,
+        .quote-sidebar,
+        .body-text {
+          grid-column: span 1;
+        }
+
+        .heading-title {
+          font-size: 1.5rem;
+        }
+
+        .heading-subtitle {
+          font-size: 1.125rem;
+        }
+
+        .quote-sidebar {
+          font-size: 0.95rem;
+          margin-top: 1rem;
+        }
+
+        .container {
+          padding: 1rem;
+        }
+      }
+    </style>
   </head>
 
   <body>
-    <h1>The Story of Te Houtaewa (PAGE heading)</h1>
-    <h2>
-      E kore e mau i a koe, he wae kai pakiaka.
-      <em
-        >A foot accustomed to running over roots makes the speediest runner.</em
-      >
-      (Optional SUB title)
-    </h2>
-    <h3>10 November 2010</h3>
+    <img
+      src="/images/Tania-31.jpeg"
+      alt="Scenic mountain landscape with rolling green hills"
+      class="hero-image"
+    />
 
-    <p>
-      Te Houtaewa was the fastest runner of his day and played many pranks on
-      his peoples enemies. One morning his mother wanted kumara for the hangi
-      (earth oven) and asked Te Houtaewa to go to the gardens at Te Kao, a short
-      distance away. He agreed to fetch the kumara and told his mother to
-      prepare the hangi.
-    </p>
-    <p>
-      Instead of going to the nearby gardens, Te Houtaewa set off for Ahipara as
-      he wanted to annoy some Te Rarawa people who lived there. Carrying two
-      large baskets for the kumara, he ran like the wind, completing the journey
-      over the hard sands of Te Oneroa a Tohe (Ninety Mile Beach) in the few
-      hours it takes a good hangi to heat up properly. On reaching Ahipara, he
-      went straight to the people's kumara pataka (storehouse for the sweet
-      potatoes) situated at the foot of the hill Whangatauatia.
-    </p>
-    <p>
-      While Te Houtaewa was filling his baskets with kumara he was spotted
-      stealing the kai (food). He was immediately recognised.
-    </p>
+    <div class="container">
+      <div class="content-grid">
+        <!-- Back Button -->
+        <div class="back-button-wrapper">
+          <a href="/index.html" class="back-button">← Back to Main Page</a>
+        </div>
+        <!-- Left: Headings -->
+        <div class="main-heading">
+          <h1 class="heading-title">The Story of Te Houtaewa</h1>
+          <p class="heading-date">10 November 2010</p>
+        </div>
 
-    <!-- this is a comment. -->
+        <!-- Right: Quote Box -->
+        <div class="quote-sidebar">
+          <p class="heading-subtitle">
+            E kore e mau i a koe, he wae kai pakiaka.
+          </p>
+          <p>
+            <em
+              >A foot accustomed to running over roots makes the speediest
+              runner.</em
+            >
+          </p>
+        </div>
+
+        <!-- Full Width: Body Text -->
+        <div class="body-text">
+          <p>
+            Te Houtaewa was the fastest runner of his day and played many pranks
+            on his peoples enemies. One morning his mother wanted kumara for the
+            hangi (earth oven) and asked Te Houtaewa to go to the gardens at Te
+            Kao, a short distance away. He agreed to fetch the kumara and told
+            his mother to prepare the hangi.
+          </p>
+
+          <p>
+            Instead of going to the nearby gardens, Te Houtaewa set off for
+            Ahipara as he wanted to annoy some Te Rarawa people who lived there.
+            Carrying two large baskets for the kumara, he ran like the wind,
+            completing the journey over the hard sands of Te Oneroa a Tohe
+            (Ninety Mile Beach) in the few hours it takes a good hangi to heat
+            up properly. On reaching Ahipara, he went straight to the people's
+            kumara pataka (storehouse for the sweet potatoes) situated at the
+            foot of the hill Whangatauatia.
+          </p>
+
+          <p>
+            While Te Houtaewa was filling his baskets with kumara he was spotted
+            stealing the kai (food). He was immediately recognised.
+          </p>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
