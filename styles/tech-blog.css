@@ -1,0 +1,53 @@
+.content-grid {
+  margin-top: 2rem;
+}
+.content-columns {
+  display: grid; /* Use CSS Grid */
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); /* prevents overflow */
+  gap: 0; /* Space between columns */
+}
+
+.page-image {
+  width: 100%; /* Ensure the image takes up the full width of its column */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensure image is not distorted */
+  grid-column: 1; /* Place image in the first column */
+  padding: 0; /* Remove any padding */
+  margin: 0; /* Ensure no margin is added around the image */
+}
+
+.body-text {
+  grid-column: 2; /* Place body text in the second column */
+  font-size: 0.95rem;
+  text-align: justify;
+  background-color: #ff738e;
+  padding: 0; /* Add padding around text */
+  box-sizing: border-box; /* Include padding in width */
+}
+
+/* --- Tablets & below --- */
+@media only screen and (max-width: 768px) {
+  .content-columns {
+    grid-template-columns: 1fr; /* stack */
+    row-gap: 0.75rem; /* add vertical space between image and text */
+  }
+
+  .page-image,
+  .body-text {
+    grid-column: 1; /* full width each */
+    width: 100%;
+  }
+
+  .body-text {
+    padding: 0.875rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* --- Small phones --- */
+@media only screen and (max-width: 400px) {
+  .body-text {
+    padding: 0.75rem;
+    font-size: 0.92rem;
+  }
+}
