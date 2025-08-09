@@ -21,6 +21,25 @@ body {
   font-style: normal;
 }
 
+.back-button {
+  grid-column: span 12;
+  margin-bottom: 1rem; /* Add some space below if needed */
+}
+
+.back-button-link {
+  color: #1f2937; /* Change to your preferred color */
+  font-size: 1rem; /* Adjust font size */
+  font-weight: 600; /* Make it bold if desired */
+  text-decoration: none; /* Remove underline */
+  padding: 0.5rem 1rem; /* Add some padding for better click area */
+  border-radius: 4px; /* Add rounded corners if desired */
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.back-button-link:hover {
+  color: #374151; /* Darker color on hover */
+  background-color: rgba(255, 255, 255, 0.1); /* Subtle background on hover */
+}
 /* Grid layout */
 .grid-two-col {
   display: grid;
@@ -197,6 +216,20 @@ body {
   -webkit-box-orient: vertical;
   line-clamp: 4; /* Non-standard but future-facing */
   box-orient: vertical; /* For old Firefox or fallback */
+}
+
+p {
+  margin-bottom: 1rem;
+  font-family: sans-serif;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+}
+.container {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 2rem;
 }
 
 /* Scroll buttons */

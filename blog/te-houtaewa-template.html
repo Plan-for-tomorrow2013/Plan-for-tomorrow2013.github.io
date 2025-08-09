@@ -1,160 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html class="blog-page">
   <head>
     <title>Stories and Legends</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="../styles/main.css" rel="stylesheet" type="text/css" />
-
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-          sans-serif;
-        background-color: #ffffff !important;
-        color: #1f2937;
-        line-height: 1.6;
-      }
-      p {
-        margin-bottom: 1rem;
-      }
-      .container {
-        max-width: 64rem;
-        margin: 0 auto;
-        padding: 2rem;
-      }
-
-      .hero-image {
-        width: 100%;
-        height: 400px;
-        object-fit: cover;
-        border-radius: 2px;
-        margin-bottom: 2rem;
-      }
-
-      .content-grid {
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        gap: 2rem;
-      }
-
-      .main-heading {
-        grid-column: span 7;
-      }
-
-      .heading-title {
-        font-size: 1.875rem;
-        font-weight: 700;
-        color: #166534;
-        margin-bottom: 1rem;
-      }
-
-      .heading-subtitle {
-        font-size: 1.5rem;
-        font-weight: 600;
-        color: white;
-        line-height: 1.4;
-        margin-bottom: 0.5rem;
-      }
-
-      .heading-subtitle em {
-        font-style: italic;
-      }
-
-      .heading-date {
-        font-size: 1rem;
-        font-weight: 600;
-        color: #166534;
-      }
-
-      .quote-sidebar {
-        grid-column: span 5;
-        background-color: #166534;
-        color: white;
-        padding: 1.5rem;
-        height: fit-content;
-        border-radius: 4px;
-        font-style: italic;
-        font-size: 1rem;
-      }
-
-      .body-text {
-        grid-column: span 12;
-        font-size: 0.95rem;
-        color: #1f2937;
-        text-align: justify;
-        margin-top: 2rem;
-      }
-
-      @media (max-width: 768px) {
-        .content-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .main-heading,
-        .quote-sidebar,
-        .body-text {
-          grid-column: span 1;
-        }
-
-        .heading-title {
-          font-size: 1.5rem;
-        }
-
-        .heading-subtitle {
-          font-size: 1.125rem;
-        }
-
-        .quote-sidebar {
-          font-size: 0.95rem;
-          margin-top: 1rem;
-        }
-
-        .container {
-          padding: 1rem;
-        }
-      }
-    </style>
+    <link href="/images/PFT Favicon.svg" rel="icon" type="image/x-icon" />
+    <link href="../styles/human-blog.css" rel="stylesheet" type="text/css" />
   </head>
 
-  <body>
-    <img
-      src="/images/Tania-31.jpeg"
-      alt="Scenic mountain landscape with rolling green hills"
-      class="hero-image"
-    />
-
+  <body class="blog-page">
     <div class="container">
+      <div class="back-button" style="grid-column: span 12">
+        <a href="/index.html" class="back-button-link">← Back to Main Page</a>
+      </div>
+      <img
+        src="/images/Tania-31.jpeg"
+        alt="Tania at a bus stop thinking"
+        class="page-image"
+      />
       <div class="content-grid">
-        <!-- Back Button -->
-        <div class="back-button-wrapper">
-          <a href="/index.html" class="back-button">← Back to Main Page</a>
-        </div>
-        <!-- Left: Headings -->
+        <!-- Headings and Quote in same row -->
         <div class="main-heading">
           <h1 class="heading-title">The Story of Te Houtaewa</h1>
           <p class="heading-date">10 November 2010</p>
         </div>
 
-        <!-- Right: Quote Box -->
         <div class="quote-sidebar">
           <p class="heading-subtitle">
             E kore e mau i a koe, he wae kai pakiaka.
           </p>
-          <p>
-            <em
-              >A foot accustomed to running over roots makes the speediest
-              runner.</em
-            >
-          </p>
+          <em
+            >A foot accustomed to running over roots makes the speediest
+            runner.</em
+          >
         </div>
 
-        <!-- Full Width: Body Text -->
+        <!-- Body Text full-width below -->
         <div class="body-text">
           <p>
             Te Houtaewa was the fastest runner of his day and played many pranks
