@@ -8,6 +8,111 @@
     <link href="/images/PFT Favicon.svg" rel="icon" type="image/x-icon" />
     <link href="../styles/blog.css" rel="stylesheet" type="text/css" />
     <link href="../styles/tech-blog.css" rel="stylesheet" type="text/css" />
+    <style>
+      .content-grid {
+        margin-top: 2rem;
+      }
+      .content-columns {
+        display: grid; /* Use CSS Grid */
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); /* prevents overflow */
+        gap: 0; /* Space between columns */
+      }
+
+      .heading-container {
+        display: flex;
+        align-items: stretch; /* Make flex items equal height */
+      }
+
+      .main-heading,
+      .quote-sidebar {
+        flex: 1;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Center content vertically */
+      }
+
+      .left-text {
+        grid-column: 1; /* Place left text in the first column */
+        font-size: 0.95rem;
+        text-align: justify;
+        background-color: #facc15;
+        padding: 1.5rem; /* Add padding around text */
+        box-sizing: border-box; /* Include padding in width */
+        display: flex;
+        flex-direction: column;
+      }
+
+      .right-text {
+        grid-column: 2; /* Place right text in the second column */
+        font-size: 0.95rem;
+        text-align: justify;
+        background-color: #ffa53b;
+        padding: 1.5rem; /* Add padding around text */
+        box-sizing: border-box; /* Include padding in width */
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* --- Tablets & below --- */
+      @media only screen and (max-width: 768px) {
+        .content-columns {
+          grid-template-columns: 1fr; /* stack */
+          row-gap: 0.75rem; /* add vertical space between text blocks */
+        }
+
+        .left-text,
+        .right-text {
+          grid-column: 1; /* full width each */
+          width: 100%;
+          padding: 0.875rem;
+          font-size: 0.95rem;
+        }
+      }
+
+      /* --- Small phones --- */
+      @media only screen and (max-width: 400px) {
+        .left-text,
+        .right-text {
+          padding: 0.75rem;
+          font-size: 0.92rem;
+        }
+      }
+
+      /* Full width text section above columns */
+      .full-width-text {
+        width: 100%;
+        background-color: #ff738e;
+        padding: 1.5rem;
+        margin-bottom: 0;
+        font-size: 1rem;
+        text-align: justify;
+        box-sizing: border-box;
+      }
+
+      @media only screen and (max-width: 768px) {
+        .full-width-text {
+          padding: 1rem;
+          font-size: 0.95rem;
+        }
+      }
+
+      @media only screen and (max-width: 400px) {
+        .full-width-text {
+          padding: 0.875rem;
+          font-size: 0.92rem;
+        }
+      }
+
+      /* Override external CSS heights */
+      .container {
+        min-height: auto !important;
+      }
+
+      body {
+        min-height: auto !important;
+      }
+    </style>
   </head>
 
   <body class="blog-page">
@@ -18,52 +123,242 @@
 
       <div class="content-grid">
         <!-- Headings and Quote in same row -->
-        <div class="main-heading">
-          <h1 class="heading-title">The Story of Te Houtaewa</h1>
-          <p class="heading-date">10 November 2010</p>
-        </div>
+        <div class="heading-container" style="grid-column: span 12">
+          <div class="main-heading">
+            <h1 class="heading-title">
+              Best practices associated with using classes vs. ids?
+            </h1>
+            <p class="heading-date">10 August 2025</p>
+          </div>
 
-        <div class="quote-sidebar">
-          <p class="heading-subtitle">
-            E kore e mau i a koe, he wae kai pakiaka.
-          </p>
-          <em
-            >A foot accustomed to running over roots makes the speediest
-            runner.</em
-          >
+          <div class="quote-sidebar">
+            <p class="heading-subtitle">
+              An id is similar to your name (Tania Hannaford) while class may be
+              more similar to a description of you (creative, kind, short,
+              brunette)
+            </p>
+          </div>
         </div>
       </div>
-      <div class="content-columns">
-        <!-- Image and Body text in the same row -->
+
+      <!-- Full width text section above columns -->
+      <div class="full-width-text">
+        <p>
+          When comparing CSS class vs ID, the difference is that CSS class
+          applies a style to multiple elements. ID, on the other hand, applies a
+          style to one unique element. ID is also special in that you can use a
+          special URL to link directly to an element and it’s used by
+          JavaScript.
+        </p>
+        <p>
+          Best practices for using classes versus IDs in HTML and CSS revolve
+          around their fundamental differences in uniqueness and application:
+        </p>
         <img
-          src="/images/Tania-59.jpeg"
-          alt="Tania at a bus stop thinking"
+          src="/images/Class-and-Id.png"
+          alt="Comparison of Class and Id"
           class="page-image"
         />
-        <!-- Body Text -->
-        <div class="body-text">
-          <p>
-            Te Houtaewa was the fastest runner of his day and played many pranks
-            on his people's enemies. One morning his mother wanted kumara for
-            the hangi (earth oven) and asked Te Houtaewa to go to the gardens at
-            Te Kao, a short distance away. He agreed to fetch the kumara and
-            told his mother to prepare the hangi.
-          </p>
+      </div>
 
-          <p>
-            Instead of going to the nearby gardens, Te Houtaewa set off for
-            Ahipara as he wanted to annoy some Te Rarawa people who lived there.
-            Carrying two large baskets for the kumara, he ran like the wind,
-            completing the journey over the hard sands of Te Oneroa a Tohe
-            (Ninety Mile Beach) in the few hours it takes a good hangi to heat
-            up properly. On reaching Ahipara, he went straight to the people's
-            kumara pataka (storehouse for the sweet potatoes) situated at the
-            foot of the hill Whangatauatia.
-          </p>
+      <div class="content-columns">
+        <!-- Left Text Column -->
+        <div class="left-text">
+          <section>
+            <h2>IDs:</h2>
+            <p>
+              The id attribute in HTML assigns a unique identifier to a single
+              HTML element. This identifier can be used to style the element
+              with CSS, interact with it via JavaScript, or create internal
+              links within a webpage. Since id values must be unique, they
+              ensure that only one element on the page will be affected by the
+              styles or scripts that reference it
+            </p>
+          </section>
 
+          <section>
+            <ul>
+              <li>
+                <strong>Uniqueness:</strong>
+                <p>
+                  An ID must be unique within a single HTML document. It should
+                  only be used to identify a single, specific element.
+                </p>
+              </li>
+              <li>
+                <strong>Targeting Specific Elements:</strong>
+                <p>
+                  IDs are ideal for targeting a particular element for styling
+                  or manipulation with JavaScript (e.g., main-navigation,
+                  footer-contact). IDs can also be used for same-page links
+                  (i.e. linking from top navigation to a part of the page
+                  below), and sometimes for HTML form label/input tags to
+                  correlate them together.
+                </p>
+              </li>
+              <li>
+                <strong>CSS Specificity:</strong>
+                <p>
+                  IDs have higher specificity than classes, meaning their styles
+                  will generally override class-based styles if there's a
+                  conflict. This can sometimes lead to specificity issues if not
+                  used carefully.
+                </p>
+              </li>
+              <li>
+                <strong>JavaScript Interaction:</strong>
+                <p>
+                  IDs are frequently used as targets for JavaScript to
+                  manipulate specific elements on the page.
+                </p>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Use id when</h2>
+            <ul>
+              <li>
+                You need to target one specific element on the page (like a
+                header, a special button, or a form).
+              </li>
+              <li>
+                You’re linking to a particular part of the page using an anchor
+                (e.g., href="#section1").
+              </li>
+              <li>
+                You want to apply JavaScript to a single element (e.g., a modal
+                popup or toggle).
+              </li>
+              <li>
+                You’re applying unique styling that shouldn’t be repeated on
+                other elements.
+              </li>
+            </ul>
+          </section>
+          <section>
+            <img src="/images/Id-html.png" alt="HTML Ids" class="page-image" />
+          </section>
+        </div>
+
+        <!-- Right Text Column -->
+        <div class="right-text">
+          <section>
+            <h2>Classes:</h2>
+            <p>
+              The class attribute in HTML assigns an element one or more class
+              names. In contrast to the id attribute, which is restricted to one
+              element per page, the same class name can be assigned to multiple
+              elements. This allows us to style, select, or manipulate groups of
+              elements collectively, making it ideal for applying the same style
+              or functionality to multiple elements on a page. The syntax of
+              using the class attribute in HTML.
+            </p>
+          </section>
+
+          <section>
+            <ul>
+              <li>
+                <strong>Reusability:</strong>
+                <p>
+                  Classes are designed for applying the same styles or behaviors
+                  to multiple elements across a webpage or even multiple pages.
+                </p>
+              </li>
+              <li>
+                <strong>Flexibility:</strong>
+                <p>
+                  An element can have multiple classes, allowing for the
+                  combination of different styles.
+                </p>
+              </li>
+              <li>
+                <strong>Naming Conventions:</strong>
+                <p>
+                  Use descriptive and semantic names that indicate the purpose
+                  or appearance of the elements they style (e.g.,
+                  button-primary, card-item). Consider methodologies like BEM
+                  (Block, Element, Modifier) for larger projects to ensure
+                  consistency and maintainability.
+                </p>
+              </li>
+              <li>
+                <strong>CSS Specificity:</strong>
+                <p>
+                  Classes have lower specificity than IDs, making them easier to
+                  override and manage in complex stylesheets.
+                </p>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Use Class when</h2>
+            <ul>
+              <li>
+                You have multiple elements that should share the same style
+                (like buttons, cards, or text blocks).
+              </li>
+              <li>
+                You’re applying the same JavaScript behavior to several elements
+                (e.g., toggling visibility, animations).
+              </li>
+              <li>
+                You want to keep your code clean and reusable by grouping
+                elements logically.
+              </li>
+            </ul>
+          </section>
+          <section>
+            <img
+              src="/images/Class-html.png"
+              alt="HTML Classes"
+              class="page-image"
+            />
+          </section>
+        </div>
+        <div
+          class="full-width-text"
+          style="grid-column: span 12; background-color: cyan"
+        >
+          <h2>General Best Practices:</h2>
+          <ul>
+            <li>
+              Prioritize Classes: In general, favor using classes over IDs for
+              styling whenever possible due to their reusability and lower
+              specificity, which promotes more manageable CSS.
+            </li>
+            <li>
+              Reserve IDs for Unique Elements: Use IDs only when you need to
+              uniquely identify a single element on a page, especially for
+              structural elements or JavaScript interaction.
+            </li>
+            <li>
+              Semantic Naming: Whether using classes or IDs, employ clear,
+              descriptive, and semantic names that reflect the content or
+              function of the element, not just its visual appearance.
+            </li>
+            <li>
+              Avoid Overuse of IDs: Excessive use of IDs can lead to overly
+              specific CSS that is difficult to maintain and override.
+            </li>
+            <li>
+              Consider Specificity: Be mindful of CSS specificity when combining
+              classes and IDs to avoid unexpected styling conflicts.
+            </li>
+          </ul>
+        </div>
+        <div
+          class="full-width-text"
+          style="grid-column: span 12; background-color: #a548ff"
+        >
+          <h2>Sources:</h2>
           <p>
-            While Te Houtaewa was filling his baskets with kumara he was spotted
-            stealing the kai (food). He was immediately recognised.
+            https://www.google.com/
+            <br />
+            https://careerkarma.com/blog/css-class-vs-id-2/
+            <br />
+            https://forum.freecodecamp.org/t/how-to-know-when-to-use-id-or-class/506353
+            <br />
+            https://www.codecademy.com/article/classes-vs-ids
           </p>
         </div>
       </div>
