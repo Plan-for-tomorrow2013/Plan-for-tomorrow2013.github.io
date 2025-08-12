@@ -1,53 +1,129 @@
+/* === 1) Base Layout === */
 .content-grid {
   margin-top: 2rem;
 }
+
 .content-columns {
-  display: grid; /* Use CSS Grid */
+  display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); /* prevents overflow */
-  gap: 0; /* Space between columns */
+  gap: 0; /* no space between columns */
 }
 
+.heading-container {
+  display: flex;
+  align-items: stretch; /* equal height */
+}
+
+.main-heading,
+.quote-sidebar {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* center content vertically */
+}
+
+/* === 2) Components === */
+.left-text {
+  grid-column: 1; /* left column */
+  font-size: 0.95rem;
+  text-align: justify;
+  background-color: #facc15;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.right-text {
+  grid-column: 2; /* right column */
+  font-size: 0.95rem;
+  text-align: justify;
+  background-color: #ffa53b;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.full-width-text {
+  width: 100%;
+  background-color: #ff738e;
+  padding: 1.5rem;
+  margin-bottom: 0;
+  font-size: 1rem;
+  text-align: justify;
+  box-sizing: border-box;
+}
+
+/* Image + body variant */
 .page-image {
-  width: 100%; /* Ensure the image takes up the full width of its column */
-  height: auto; /* Maintain aspect ratio */
-  object-fit: cover; /* Ensure image is not distorted */
-  grid-column: 1; /* Place image in the first column */
-  padding: 0; /* Remove any padding */
-  margin: 0; /* Ensure no margin is added around the image */
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  grid-column: 1; /* first column */
+  padding: 0;
+  margin: 0;
+  display: block; /* avoid inline-gap */
 }
 
 .body-text {
-  grid-column: 2; /* Place body text in the second column */
+  grid-column: 2; /* second column */
   font-size: 0.95rem;
   text-align: justify;
   background-color: #ff738e;
-  padding: 0; /* Add padding around text */
-  box-sizing: border-box; /* Include padding in width */
+  padding: 0; /* overridden on smaller screens */
+  box-sizing: border-box;
 }
 
-/* --- Tablets & below --- */
+/* === 3) Overrides / Utilities === */
+.container {
+  min-height: auto !important;
+}
+
+body {
+  min-height: auto !important;
+}
+
+/* === 4) Responsive === */
+
+/* Tablets & below */
 @media only screen and (max-width: 768px) {
   .content-columns {
     grid-template-columns: 1fr; /* stack */
-    row-gap: 0.75rem; /* add vertical space between image and text */
+    row-gap: 0.75rem; /* vertical space between blocks */
   }
 
+  /* Stack left/right variant */
+  .left-text,
+  .right-text {
+    grid-column: 1; /* full width each */
+    width: 100%;
+    padding: 0.875rem;
+    font-size: 0.95rem;
+  }
+
+  /* Stack image + body variant */
   .page-image,
   .body-text {
     grid-column: 1; /* full width each */
     width: 100%;
   }
 
-  .body-text {
-    padding: 0.875rem;
+  .body-text,
+  .full-width-text {
+    padding: 1rem;
     font-size: 0.95rem;
   }
 }
 
-/* --- Small phones --- */
+/* Small phones */
 @media only screen and (max-width: 400px) {
-  .body-text {
-    padding: 0.75rem;
+  .left-text,
+  .right-text,
+  .body-text,
+  .full-width-text {
+    padding: 0.875rem;
     font-size: 0.92rem;
   }
 }
