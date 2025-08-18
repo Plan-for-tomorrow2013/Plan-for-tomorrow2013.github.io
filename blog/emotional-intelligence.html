@@ -18,17 +18,42 @@
 
       <div class="content-grid">
         <!-- Headings and Quote in same row -->
-        <div class="heading-container" style="grid-column: span 12">
-          <div class="main-heading">
+        <div
+          class="heading-container"
+          style="
+            grid-column: span 12;
+            display: flex;
+            align-items: stretch;
+            height: 100%;
+          "
+        >
+          <div
+            class="main-heading"
+            style="
+              flex: 1;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+            "
+          >
             <h1 class="heading-title">Emotional Intelligence</h1>
-            <p class="heading-date">12 August 2025</p>
+            <p class="heading-date">18 August 2025</p>
           </div>
 
-          <div class="quote-sidebar">
+          <div
+            class="quote-sidebar"
+            style="
+              flex: 1;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+            "
+          >
             <p class="heading-subtitle">
-              An id is similar to your name (Tania Hannaford) while class may be
-              more similar to a description of you (creative, kind, short,
-              brunette)
+              IQ primarily measures cognitive abilities such as logical
+              reasoning, problem-solving, and analytical skills, EQ refers to
+              aptitude for understanding and managing emotions, empathizing with
+              others, and building effective interpersonal relationships
             </p>
           </div>
         </div>
@@ -36,16 +61,26 @@
 
       <!-- Full width text section above columns -->
       <div class="full-width-text">
+        <h2>What is Emotional Intelligence (EQ)?</h2>
         <p>
-          When comparing CSS class vs ID, the difference is that CSS class
-          applies a style to multiple elements. ID, on the other hand, applies a
-          style to one unique element. ID is also special in that you can use a
-          special URL to link directly to an element and it’s used by
-          JavaScript.
-        </p>
-        <p>
-          Best practices for using classes versus IDs in HTML and CSS revolve
-          around their fundamental differences in uniqueness and application:
+          Emotional intelligence (EI) is generally understood as the ability to
+          recognize, understand, and manage one’s own emotions, as well as to
+          perceive and influence the emotions of others, encompassing both
+          self-awareness and social awareness skills (Mayer et al., 2003;
+          Goleman, 2001). It is considered distinct from cognitive intelligence
+          (IQ) and personality traits, with research demonstrating that EI can
+          predict important outcomes such as workplace performance, leadership
+          effectiveness, and interpersonal relationships, even after controlling
+          for IQ and personality factors (Cherniss et al., 2006). In workplace
+          contexts, EI contributes to building effective communication,
+          collaboration, and conflict management skills, thereby enhancing
+          organisational performance and employee well-being (Mental Health
+          America, n.d.). Moreover, EI can be cultivated through structured
+          programs—often referred to as social and emotional learning
+          (SEL)—which have been shown to improve social skills, academic
+          achievement, and mental health outcomes in educational settings
+          (Cherniss et al., 2006; Collaborative for Academic, Social, and
+          Emotional Learning, 2005).
         </p>
       </div>
 
@@ -69,34 +104,43 @@
         </div>
         <div
           class="full-width-text"
+          style="grid-column: span 12; background-color: #ff738e"
+        >
+          <h2>The difference between EQ and IQ</h2>
+          <p>
+            Emotional intelligence (EQ) differs from intelligence quotient (IQ)
+            in that EQ refers to the ability to recognise, understand, and
+            manage one’s own emotions, as well as perceive and influence the
+            emotions of others, supporting empathy, self-regulation, and
+            effective relationship building (BetterUp, n.d.; Dovetail, n.d.). In
+            contrast, IQ measures cognitive abilities such as logical reasoning,
+            problem-solving, and analytical thinking, which are less focused on
+            emotional and social contexts (BetterUp, n.d.; Dovetail, n.d.).
+            While IQ can contribute to academic and technical performance, EQ
+            plays a critical role in communication, conflict resolution, and
+            overall interpersonal effectiveness (Dev Academy, n.d.; BetterUp,
+            n.d.).
+          </p>
+        </div>
+        <div
+          class="full-width-text"
           style="grid-column: span 12; background-color: cyan"
         >
-          <h2>General Best Practices:</h2>
-          <ul>
-            <li>
-              Prioritize Classes: In general, favor using classes over IDs for
-              styling whenever possible due to their reusability and lower
-              specificity, which promotes more manageable CSS.
-            </li>
-            <li>
-              Reserve IDs for Unique Elements: Use IDs only when you need to
-              uniquely identify a single element on a page, especially for
-              structural elements or JavaScript interaction.
-            </li>
-            <li>
-              Semantic Naming: Whether using classes or IDs, employ clear,
-              descriptive, and semantic names that reflect the content or
-              function of the element, not just its visual appearance.
-            </li>
-            <li>
-              Avoid Overuse of IDs: Excessive use of IDs can lead to overly
-              specific CSS that is difficult to maintain and override.
-            </li>
-            <li>
-              Consider Specificity: Be mindful of CSS specificity when combining
-              classes and IDs to avoid unexpected styling conflicts.
-            </li>
-          </ul>
+          <h2>The importance of EQ</h2>
+          <p>
+            Emotional intelligence (EQ) is important because it enables
+            individuals to recognise, understand, and manage their own emotions
+            as well as the emotions of others, which is essential for effective
+            communication, collaboration, and relationship-building (Wikipedia;
+            MHA National). In contrast to IQ, which measures cognitive ability,
+            EQ is linked to empathy, adaptability, and self-regulation, skills
+            that are crucial for navigating social and professional environments
+            (Dovetail; BetterUp). In the workplace, higher EQ supports
+            leadership, teamwork, and conflict resolution, while also helping
+            individuals cope with stress and change, ultimately contributing to
+            both personal wellbeing and organisational success (MHA National;
+            Student Handbook).
+          </p>
         </div>
         <div
           class="full-width-text"
@@ -104,20 +148,32 @@
         >
           <h2>Sources:</h2>
           <p>
-            <a href="https://www.google.com/">https://www.google.com/</a>
-            <br />
-            <a href="https://careerkarma.com/blog/css-class-vs-id-2/"
-              >https://careerkarma.com/blog/css-class-vs-id-2/</a
+            <a
+              href="https://student-handbook.devacademy.life/foundations/curriculum/sprint-3/01-human-skills/c1-emotional-intelligence"
+              >https://student-handbook.devacademy.life/foundations/curriculum/sprint-3/01-human-skills/c1-emotional-intelligence
+            </a>
+            <a
+              href="https://www.uclahealth.org/programs/uclamindful/free-guided-meditations/getting-started"
+              >https://www.uclahealth.org/programs/uclamindful/free-guided-meditations/getting-started
+            </a>
+
+            <a href="https://en.wikipedia.org/wiki/Emotional_intelligence"
+              >https://en.wikipedia.org/wiki/Emotional_intelligence</a
             >
             <br />
             <a
-              href="https://forum.freecodecamp.org/t/how-to-know-when-to-use-id-or-class/506353"
-              >https://forum.freecodecamp.org/t/how-to-know-when-to-use-id-or-class/506353</a
+              href="https://mhanational.org/learning-hub/what-is-emotional-intelligence-and-how-does-it-apply-to-the-workplace/"
+              >https://mhanational.org/learning-hub/what-is-emotional-intelligence-and-how-does-it-apply-to-the-workplace/</a
             >
             <br />
-            <a href="https://www.codecademy.com/article/classes-vs-ids"
-              >https://www.codecademy.com/article/classes-vs-ids</a
+            <a
+              href="https://dovetail.com/employee-experience/differences-between-eq-and-iq"
+              >https://dovetail.com/employee-experience/differences-between-eq-and-iq</a
             >
+            <br />
+            <a href="https://www.betterup.com/blog/eq-vs-iq"
+              >https://www.betterup.com/blog/eq-vs-iq
+            </a>
           </p>
         </div>
       </div>

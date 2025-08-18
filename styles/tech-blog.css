@@ -10,8 +10,8 @@
 }
 
 .heading-container {
-  display: flex;
-  align-items: stretch; /* equal height */
+  display: flex !important;
+  align-items: stretch !important; /* equal height */
 }
 
 .main-heading,
