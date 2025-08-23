@@ -43,7 +43,7 @@
   .main-heading,
   .quote-sidebar,
   .body-text {
-    grid-column: 1 / -1; /* full-width each */
+    grid-column: 1 / -1;
   }
 
   .heading-title {

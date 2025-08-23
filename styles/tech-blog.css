@@ -54,6 +54,7 @@
   font-size: 1rem;
   text-align: justify;
   box-sizing: border-box;
+  grid-column: 1 / -1;
 }
 
 /* Image + body variant */
