@@ -1,13 +1,3 @@
-.page-image {
-  max-width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 4px;
-  margin-top: 2rem;
-  margin-bottom: 0; /* Explicitly set bottom margin to 0 */
-  display: block; /* Remove any inline spacing */
-}
-
 .body-text {
   grid-column: span 12;
   font-size: 0.95rem;

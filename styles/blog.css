@@ -39,6 +39,17 @@ body {
   padding: 0; /* Ensure no padding on grid */
 }
 
+.page-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  grid-column: 1; /* first column */
+  padding: 0;
+  border-radius: 4px;
+  margin: 0;
+  display: block; /* avoid inline-gap */
+}
+
 .main-heading {
   grid-column: span 7;
   color: black;

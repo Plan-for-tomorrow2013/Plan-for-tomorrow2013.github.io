@@ -1,67 +1,13 @@
 <!DOCTYPE html>
 <html class="blog-page">
   <head>
-    <title>te-whare-tapa-wha</title>
+    <title>Te Whare Tapa Whā</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="../styles/main.css" rel="stylesheet" type="text/css" />
     <link href="/images/PFT Favicon.svg" rel="icon" type="image/x-icon" />
     <link href="../styles/blog.css" rel="stylesheet" type="text/css" />
-    <style>
-      .content-grid {
-        margin-top: 2rem;
-      }
-      .content-columns {
-        display: grid; /* Use CSS Grid */
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); /* prevents overflow */
-        gap: 0; /* Space between columns */
-      }
-
-      .page-image {
-        width: 100%; /* Ensure the image takes up the full width of its column */
-        height: auto; /* Maintain aspect ratio */
-        object-fit: cover; /* Ensure image is not distorted */
-        grid-column: 1; /* Place image in the first column */
-        padding: 0; /* Remove any padding */
-        margin: 0; /* Ensure no margin is added around the image */
-      }
-
-      .body-text {
-        grid-column: 2; /* Place body text in the second column */
-        font-size: 0.95rem;
-        text-align: justify;
-        background-color: #ff738e;
-        padding: 0; /* Add padding around text */
-        box-sizing: border-box; /* Include padding in width */
-      }
-
-      /* --- Tablets & below --- */
-      @media only screen and (max-width: 768px) {
-        .content-columns {
-          grid-template-columns: 1fr; /* stack */
-          row-gap: 0.75rem; /* add vertical space between image and text */
-        }
-
-        .page-image,
-        .body-text {
-          grid-column: 1; /* full width each */
-          width: 100%;
-        }
-
-        .body-text {
-          padding: 0.875rem;
-          font-size: 0.95rem;
-        }
-      }
-
-      /* --- Small phones --- */
-      @media only screen and (max-width: 400px) {
-        .body-text {
-          padding: 0.75rem;
-          font-size: 0.92rem;
-        }
-      }
-    </style>
+    <link href="../styles/tech-blog.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body class="blog-page">
@@ -72,125 +18,189 @@
 
       <div class="content-grid">
         <!-- Headings and Quote in same row -->
-        <div class="main-heading">
-          <h1 class="heading-title">The Story of Te Houtaewa</h1>
-          <p class="heading-date">10 November 2010</p>
-        </div>
-
-        <div class="quote-sidebar">
-          <p class="heading-subtitle">Te Whare Tapa Whā.</p>
-          <em
-            >A foot accustomed to running over roots makes the speediest
-            runner.</em
+        <div
+          class="heading-container"
+          style="
+            grid-column: span 12;
+            display: flex;
+            align-items: stretch;
+            height: 100%;
+          "
+        >
+          <div
+            class="main-heading"
+            style="
+              flex: 1;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+            "
           >
+            <h1 class="heading-title">Te Whare Tapa Whā</h1>
+            <p class="heading-date">24 August 2025</p>
+          </div>
+
+          <div
+            class="quote-sidebar"
+            style="
+              flex: 1;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+            "
+          >
+            <p class="heading-subtitle">
+              Te Whare Tapa Whā is a model of the 4 dimensions of wellbeing
+              developed by Tā Mason Durie in 1984 to provide a Māori perspective
+              on health
+            </p>
+          </div>
         </div>
       </div>
-      <div class="content-columns">
-        <!-- Image and Body text in the same row -->
-        <img
-          src="/images/Tania-59.jpeg"
-          alt="Tania at a bus stop thinking"
-          class="page-image"
-        />
-        <!-- Body Text -->
-        <div class="body-text">
-          <ul>
-            <li>
-              <strong>Tinana (physical wellbeing)</strong>
-              <p>
-                Taha tinana is your physical wellbeing. It is about how your
-                body grows, feels and moves, and how you care for it. Nourishing
-                and strengthening your physical wellbeing helps you to cope with
-                the ups and downs and life. Feeling physically well helps you
-                feel mentally well. Some key things to take care of taha tinana
-                are physical activity, healthy eating, and good sleep hygiene.
-              </p>
-            </li>
-            <li>
-              <strong>Taha Hinengaro (emotional and mental wellbeing)</strong>
-              <p>
-                Taha hinengaro is your mind, heart, conscience, thoughts and
-                feelings. It’s about how you feel, as well as how you
-                communicate and think. Taking care of taha hinengaro is
-                important for everyone, regardless of whether or not you’ve
-                experienced mental illness or distress. The foods we eat can
-                affect our mental health, physical activity can reduce symptoms
-                of stress and anxiety, and learning how to manage stress before
-                it gets overwhelming are all ways to support taha hinengaro
-              </p>
-            </li>
-            <li>
-              <strong>Taha Wairua (spiritual wellbeing)</strong>
-              <p>
-                The way people view wairua can be very different. For some,
-                wairua is the capacity for faith or religious beliefs or having
-                a belief in a higher power. For others, wairua is an internal
-                connection to the universe or the sacred. There is no right or
-                wrong way to think of or experience wairua, but it is an
-                important part of your mental wellbeing. Spiritual wellbeing can
-                be expressed through beliefs, values, traditions and practices
-                that support self-awareness and identity. Taha wairua provides a
-                sense of meaning and purpose as well as experiencing a sense of
-                connectedness to self, whānau, community, nature and the sacred.
-              </p>
-            </li>
-            <li>
-              <strong>Taha Whānau (family wellbeing)</strong>
-              <p>
-                Taha whānau is about who makes you feel like you belong, who you
-                care about and who you share your life with. Whānau is about
-                extended relationships – it’s not just your immediate relatives,
-                it’s your friends, hoamahi (colleagues), community and the
-                people you care about. Everyone has a place and a role to fulfil
-                within their whānau, and whānau contributes to your individual
-                wellbeing and identity. Spending time with whānau, doing things
-                for them and getting involved gives you a feeling of purpose,
-                connection and wellbeing. It benefits you and strengthens your
-                whānau. As a core source of strength, support, security and
-                identity, whānau plays a central role in your wellbeing.
-              </p>
-            </li>
-            <li>
-              <strong>Whenua (land)</strong>
-              <p>
-                As the foundation for the other 4 dimensions, the health of the
-                land and the natural environment is strongly connected to your
-                health and wellbeing. You can think about whenua as your place
-                of belonging. For Māori, the whenua is a key part of identity.
-                Connection to the land and to nature has been shown to improve
-                mental and physical wellbeing.
-              </p>
-            </li>
-          </ul>
-        </div>
-        <div class="full-width-text">
-          <h2>My Te Whare Tapa Whā</h2>
-          <p>
-            Dev Academy has a commitment to Te Tiriti O Waitangi and is working
-            out how to honour and integrate its principles. We all live in
-            Aotearoa and drawing on a wellbeing model grounded in Te Ao Māori
-            makes sense. We teach the whole person at Dev Academy, and this
-            holistic approach is aligned with that.
-          </p>
-        </div>
-        <div>
-          <table bgcolor="black">
-            <tr>
-              <th>Taha Tinana (Physical Wellbeing)</th>
-              <th>Taha Whānau (Family Wellbeing)</th>
-              <th>Taha Hinengaro (Emotional and Mental Wellbeing)</th>
-              <th>Taha Wairua (Spiritual Wellbeing)</th>
-              <th>Whenua (Interconnections to the land and environment)</th>
-            </tr>
-            <tr>
-              <td>e.g. going for a swim before class 2 x a week</td>
-              <td>e.g. going for a swim before class 2 x a week</td>
-              <td>e.g. going for a swim before class 2 x a week</td>
-              <td>e.g. going for a swim before class 2 x a week</td>
-              <td>e.g. going for a swim before class 2 x a week</td>
-            </tr>
-          </table>
-        </div>
+
+      <div class="full-width-text" style="background-color: #facc15">
+        <h2>My Te Whare Tapa Whā</h2>
+        <p>
+          Dev Academy has a commitment to Te Tiriti O Waitangi and is working
+          out how to honour and integrate its principles. We all live in
+          Aotearoa and drawing on a wellbeing model grounded in Te Ao Māori
+          makes sense. We teach the whole person at Dev Academy, and this
+          holistic approach is aligned with that.
+        </p>
+      </div>
+
+      <img
+        src="/images/Tania-triathlon.jpg"
+        alt="Tania starting the swim leg of a Tania-triathlon"
+        class="page-image"
+      />
+
+      <div class="full-width-text" style="background-color: #ff738e">
+        <ul>
+          <li>
+            <strong>Tinana (physical wellbeing)</strong>
+            <p>
+              Taha tinana is your physical wellbeing. It is about how your body
+              grows, feels and moves, and how you care for it. Nourishing and
+              strengthening your physical wellbeing helps you to cope with the
+              ups and downs and life. Feeling physically well helps you feel
+              mentally well. Some key things to take care of taha tinana are
+              physical activity, healthy eating, and good sleep hygiene.
+            </p>
+          </li>
+          <li>
+            <strong>Taha Hinengaro (emotional and mental wellbeing)</strong>
+            <p>
+              Taha hinengaro is your mind, heart, conscience, thoughts and
+              feelings. It’s about how you feel, as well as how you communicate
+              and think. Taking care of taha hinengaro is important for
+              everyone, regardless of whether or not you’ve experienced mental
+              illness or distress. The foods we eat can affect our mental
+              health, physical activity can reduce symptoms of stress and
+              anxiety, and learning how to manage stress before it gets
+              overwhelming are all ways to support taha hinengaro
+            </p>
+          </li>
+          <li>
+            <strong>Taha Wairua (spiritual wellbeing)</strong>
+            <p>
+              The way people view wairua can be very different. For some, wairua
+              is the capacity for faith or religious beliefs or having a belief
+              in a higher power. For others, wairua is an internal connection to
+              the universe or the sacred. There is no right or wrong way to
+              think of or experience wairua, but it is an important part of your
+              mental wellbeing. Spiritual wellbeing can be expressed through
+              beliefs, values, traditions and practices that support
+              self-awareness and identity. Taha wairua provides a sense of
+              meaning and purpose as well as experiencing a sense of
+              connectedness to self, whānau, community, nature and the sacred.
+            </p>
+          </li>
+          <li>
+            <strong>Taha Whānau (family wellbeing)</strong>
+            <p>
+              Taha whānau is about who makes you feel like you belong, who you
+              care about and who you share your life with. Whānau is about
+              extended relationships – it’s not just your immediate relatives,
+              it’s your friends, hoamahi (colleagues), community and the people
+              you care about. Everyone has a place and a role to fulfil within
+              their whānau, and whānau contributes to your individual wellbeing
+              and identity. Spending time with whānau, doing things for them and
+              getting involved gives you a feeling of purpose, connection and
+              wellbeing. It benefits you and strengthens your whānau. As a core
+              source of strength, support, security and identity, whānau plays a
+              central role in your wellbeing.
+            </p>
+          </li>
+          <li>
+            <strong>Whenua (land)</strong>
+            <p>
+              As the foundation for the other 4 dimensions, the health of the
+              land and the natural environment is strongly connected to your
+              health and wellbeing. You can think about whenua as your place of
+              belonging. For Māori, the whenua is a key part of identity.
+              Connection to the land and to nature has been shown to improve
+              mental and physical wellbeing.
+            </p>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <table
+          bgcolor="white"
+          border="1"
+          style="border-collapse: collapse; width: 100%"
+        >
+          <tr>
+            <th style="border: 1px solid black; padding: 8px">
+              Taha Tinana (Physical Wellbeing)
+            </th>
+            <th style="border: 1px solid black; padding: 8px">
+              Taha Whānau (Family Wellbeing)
+            </th>
+            <th style="border: 1px solid black; padding: 8px">
+              Taha Hinengaro (Emotional and Mental Wellbeing)
+            </th>
+            <th style="border: 1px solid black; padding: 8px">
+              Taha Wairua (Spiritual Wellbeing)
+            </th>
+            <th style="border: 1px solid black; padding: 8px">
+              Whenua (Interconnections to the land and environment)
+            </th>
+          </tr>
+          <tr>
+            <td style="border: 1px solid black; padding: 8px">
+              e.g. on non sporting days, try and go for a short walk
+            </td>
+            <td style="border: 1px solid black; padding: 8px">
+              e.g. spend individual quality time with each of them and be
+              engaged at dinner time
+            </td>
+            <td style="border: 1px solid black; padding: 8px">
+              e.g. dont answer the phone when in a project flow. Take breaks!
+            </td>
+            <td style="border: 1px solid black; padding: 8px">
+              e.g. give thanks for small and big things
+            </td>
+            <td style="border: 1px solid black; padding: 8px">
+              e.g. be a tidy kiwi
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div
+        class="full-width-text"
+        style="grid-column: span 12; background-color: #a548ff"
+      >
+        <h2>Sources:</h2>
+        <p>
+          <a
+            href="https://student-handbook.devacademy.life/foundations/curriculum/sprint-4/01-human-skills/c4-te-whare-tapa-wha"
+            >https://student-handbook.devacademy.life/foundations/curriculum/sprint-4/01-human-skills/c4-te-whare-tapa-wha
+          </a>
+        </p>
       </div>
     </div>
   </body>
