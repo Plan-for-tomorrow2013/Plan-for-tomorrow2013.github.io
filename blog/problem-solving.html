@@ -8,6 +8,30 @@
     <link href="/images/PFT Favicon.svg" rel="icon" type="image/x-icon" />
     <link href="../styles/blog.css" rel="stylesheet" type="text/css" />
     <link href="../styles/tech-blog.css" rel="stylesheet" type="text/css" />
+
+    <style>
+      iframe {
+        display: block;
+        margin: 0 auto; /* centers it */
+        width: 100%; /* full width */
+        height: 500px; /* adjust for aspect ratio */
+      }
+
+      .video-container {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 ratio */
+        height: 0;
+        overflow: hidden;
+      }
+
+      .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
   </head>
 
   <body class="blog-page">
@@ -21,7 +45,7 @@
         <div class="heading-container" style="grid-column: span 12">
           <div class="main-heading">
             <h1 class="heading-title">Problem Solving</h1>
-            <p class="heading-date">23 August 2025</p>
+            <p class="heading-date">23 September 2025</p>
           </div>
 
           <div class="quote-sidebar">
@@ -32,29 +56,52 @@
         </div>
       </div>
 
+      <div class="video-container">
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/uYOmtEcZ1lk"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        >
+        </iframe>
+      </div>
+
       <!-- Full width text section above columns -->
       <div class="full-width-text">
         <h2>1. Unblocking a simple problem:</h2>
         <p>
-          HTML is the stage and the set pieces - the structure and layout. CSS
-          is the lighting, costumes and colours - the things that make it
-          pretty!. JavaScript is the director, instructing the actors (the page
-          elements) when and how to move, respond, or change. It adds the
-          interactivity that brings the performance to life.
+          I was blocked on what seemed like a simple problem. The instructions I
+          had been given did not align with the resources provided, which
+          created confusion and uncertainty about how to proceed. To resolve
+          this, I looked through the supplied materials, compared them with the
+          resources I knew should apply to the project, and then checked back in
+          with the project manager for clarification. At first I felt quite
+          confused, but once the issue was confirmed I felt validated that the
+          challenge was not due to my misunderstanding, but rather an
+          inconsistency in the handover. From this experience I learned that
+          sometimes obstacles are not about my own ability or understanding, but
+          instead about things that happened prior to me receiving the file, and
+          it is important to recognise when the problem lies in process or
+          communication rather than in myself.
         </p>
-        <img src="/images/HTML.png" alt="HTML stage show" class="page-image" />
       </div>
 
       <div class="full-width-text" style="background-color: #facc15">
         <h2>2. Elegantly solving a problem:</h2>
         <p>
-          Imagine you're hosting a dinner party. First you plan (grocery
-          shopping, prep dishes in order): that’s control flow, the sequence of
-          steps you follow. But if you're prepping multiple appetizers and need
-          to chop carrots until they’re all done—that’s a loop: repeating a task
-          (chopping) until a condition is met (all carrots are chopped). In
-          JavaScript, control flow ensures things execute top‑to‑bottom, while
-          loops allow repeating actions until a condition is fulfilled.
+          I was faced with a problem that needed an elegant solution: camel case
+          had to be installed, although at the time I did not even know what
+          camel case was. To work through the issue, I used console logging to
+          test my assumptions and turned to ChatGPT for guidance. Throughout the
+          process I felt both lost and very smart at the same time — lost
+          because I was learning something completely new, yet smart because I
+          was able to apply the tools at my disposal effectively to reach a
+          solution. From this experience I not only solved the immediate issue
+          but also learned the difference between camel case and snake case,
+          which gave me new knowledge I can apply in future coding tasks.
         </p>
       </div>
 
@@ -64,71 +111,94 @@
           <li>
             <strong>Pseudocode</strong>
             <p>
-              are like numbered lists (0, 1, 2…). You access items by position:
-              myArray[0] gives the first item
+              I usually write pseudocode in my head, but through this course I
+              have found it useful to make it part of my actual process.
+              Formalising it on paper or screen helps clarify my logic and gives
+              me a stronger foundation before I start coding.
             </p>
           </li>
           <li>
             <strong>Trying something</strong>
             <p>
-              are like labeled drawers—you refer to values by their names:
-              myObject.name gives you the "name" value
+              Experimenting has always been my natural way of solving problems,
+              and in fact, it is what led me to join this course in the first
+              place. I feel confident in this approach as it encourages
+              exploration, risk-taking, and learning through trial and error.
             </p>
           </li>
 
           <li>
             <strong>Rubber Ducky Method</strong>
             <p>
-              are like labeled drawers—you refer to values by their names:
-              myObject.name gives you the "name" value
+              I really enjoy the rubber ducky method and find it both fun and
+              effective. I had heard of similar techniques before, such as
+              children using worry dolls, and I see parallels with mental health
+              strategies — speaking thoughts aloud can bring clarity and
+              perspective. This process helps me untangle my ideas and reassess
+              them in a more objective way
             </p>
           </li>
 
           <li>
             <strong>Reading error messages</strong>
             <p>
-              are like labeled drawers—you refer to values by their names:
-              myObject.name gives you the "name" value
+              I am becoming more confident in reading error messages,
+              particularly as the messages in Cursor are clear and easy to
+              follow. Being able to identify the line and type of issue quickly
+              has made debugging less intimidating and more approachable
             </p>
           </li>
 
           <li>
             <strong>Console.logging</strong>
             <p>
-              are like labeled drawers—you refer to values by their names:
-              myObject.name gives you the "name" value
+              Console.logging is new to me in the way we have been using it
+              during the course. Although I am still building confidence, it is
+              becoming clearer each time I use it, and I can already see how
+              valuable it is for testing assumptions and tracking what my code
+              is actually doing
             </p>
           </li>
 
           <li>
             <strong>Googling</strong>
             <p>
-              are like labeled drawers—you refer to values by their names:
-              myObject.name gives you the "name" value
+              Googling has been the original problem-solving tool of my
+              generation, and I have always been confident in using it. However,
+              I am finding that it plays a different role now — rather than
+              being my first step, it has become a secondary resource as I
+              develop other strategies and engage with new tools
             </p>
           </li>
 
           <li>
             <strong>Asking your peers for help</strong>
             <p>
-              are like labeled drawers—you refer to values by their names:
-              myObject.name gives you the "name" value
+              This is an area where I am least confident. At present, I tend not
+              to ask my peers for help, preferring to try to resolve issues on
+              my own. I recognise that this is a growth area for me, as
+              collaboration could provide useful perspectives and solution
             </p>
           </li>
 
           <li>
             <strong>Asking coaches for help</strong>
             <p>
-              are like labeled drawers—you refer to values by their names:
-              myObject.name gives you the "name" value
+              I feel somewhat confident in asking coaches for help, but usually
+              only when I have a specific problem that I cannot resolve on my
+              own. While I value their expertise, I often prefer to attempt
+              other strategies first.
             </p>
           </li>
 
           <li>
             <strong>Improving process with reflection</strong>
             <p>
-              are like labeled drawers—you refer to values by their names:
-              myObject.name gives you the "name" value
+              Reflection comes naturally to me, often happening during “shower
+              thoughts” or those moments of clarity that appear at 3am. I feel
+              confident in this process, as it allows me to step back, evaluate
+              what worked, and identify areas to improve in both my learning and
+              problem-solving approach.
             </p>
           </li>
         </ul>
@@ -141,13 +211,25 @@
           time?:
         </h2>
         <p>
-          Imagine you're hosting a dinner party. First you plan (grocery
-          shopping, prep dishes in order): that’s control flow, the sequence of
-          steps you follow. But if you're prepping multiple appetizers and need
-          to chop carrots until they’re all done—that’s a loop: repeating a task
-          (chopping) until a condition is met (all carrots are chopped). In
-          JavaScript, control flow ensures things execute top‑to‑bottom, while
-          loops allow repeating actions until a condition is fulfilled.
+          I recognise that I am most confident with self-directed
+          problem-solving methods such as pseudocode, trying different
+          approaches, reflecting, Googling, and reading error messages. I am
+          also developing confidence with technical debugging tools like
+          console.logging. However, I am least confident when it comes to
+          collaborative methods such as asking peers or coaches for help. I
+          often find myself reluctant to ask because I feel like I am
+          interrupting or that I will be dismissed with unhelpful responses such
+          as “just Google it” or having the problem repeated back to me.
+          Unfortunately, these experiences with teachers and mentors in the past
+          have reinforced my hesitation, making me feel that it is easier to
+          struggle through on my own rather than seek support. If I do ask for
+          help, it is usually because I have already exhausted all other options
+          or because the issue feels urgent and critical. Reflecting on this, I
+          recognise that I should not need to “validate” myself to justify
+          asking for help. Moving forward, I would like to approach help-seeking
+          differently by reframing it as a way to save time, gain new
+          perspectives, and build collaborative learning, rather than as a
+          weakness or an interruption.
         </p>
       </div>
 
@@ -155,34 +237,19 @@
         <h2>Sources:</h2>
         <p>
           <a
-            href="https://student-handbook.devacademy.life/foundations/curriculum/sprint-3/02-tech/t1-js-basics-course"
-            >https://student-handbook.devacademy.life/foundations/curriculum/sprint-3/02-tech/t1-js-basics-course/</a
+            href="https://student-handbook.devacademy.life/foundations/curriculum/sprint-4/02-tech/t5-pseudocode-problem-solving"
+            >https://student-handbook.devacademy.life/foundations/curriculum/sprint-4/02-tech/t5-pseudocode-problem-solving/</a
           >
           <br />
           <a
-            href="https://student-handbook.devacademy.life/foundations/curriculum/sprint-3/02-tech/t2-js-dom-primer"
-            >https://student-handbook.devacademy.life/foundations/curriculum/sprint-3/02-tech/t2-js-dom-primer</a
+            href="https://student-handbook.devacademy.life/foundations/curriculum/sprint-1/04-tech/t0-asking-for-help"
+            >https://student-handbook.devacademy.life/foundations/curriculum/sprint-1/04-tech/t0-asking-for-help</a
           >
           <br />
-          <a
-            href="https://medium.com/%40lewis.taiapa/javascript-fundamentals-control-flows-and-looping-4ec2d68f59d8"
-            >https://medium.com/%40lewis.taiapa/javascript-fundamentals-control-flows-and-looping-4ec2d68f59d8</a
+          <a href="https://en.wikipedia.org/wiki/Rubber_duck_debugging"
+            >https://en.wikipedia.org/wiki/Rubber_duck_debugging</a
           >
           <br />
-          <a
-            href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction"
-            >https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction</a
-          >
-          <br />
-          <a
-            href="https://www.freecodecamp.org/news/dom-explained-everything-you-need-to-know-about-the-document-object-model"
-            >https://www.freecodecamp.org/news/dom-explained-everything-you-need-to-know-about-the-document-object-model</a
-          >
-          <br />
-          <a
-            href="https://medium.com/%40techwithtwin/understanding-the-dom-a-beginner-friendly-guide-to-how-websites-work-techwithtwin-8b1c30c247d5"
-            >https://medium.com/%40techwithtwin/understanding-the-dom-a-beginner-friendly-guide-to-how-websites-work-techwithtwin-8b1c30c247d5</a
-          >
         </p>
       </div>
     </div>
